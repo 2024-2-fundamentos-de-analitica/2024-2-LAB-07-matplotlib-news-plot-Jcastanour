@@ -6,6 +6,7 @@ Escriba el codigo que ejecute la accion solicitada en cada pregunta.
 
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
 
 
 def news():
@@ -94,8 +95,14 @@ def news():
                 va='center', 
                 color = colors[col]
                     )
-            
+
+    #crear carpeta plots 
+    if not os.path.exists('files/plots'):
+        os.makedirs('files/plots')
+
     plt.tight_layout()
+   
+    
     plt.savefig('files/plots/news.png')
 
 def pregunta_01():
